@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">Admin Dashboard</div>
+    <nav class="nav">
+      <a href="../index.html">ទំព័រ​មុខ</a>
+      <button class="btn btn-ghost" onclick="logout()">ចេញគណនី</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h2>គ្រប់គ្រងផលិតផល</h2>
+    <form id="prodForm" class="form">
+      <input class="input" id="name" placeholder="ឈ្មោះផលិតផល" required>
+      <input class="input" id="price" type="number" step="0.01" min="0" placeholder="តម្លៃ" required>
+      <input class="input form-full" id="image" placeholder="URL រូបភាព (ឧ. https://...)">
+      <input class="input" id="tag" placeholder="ប្រភេទ (Steam/DLC/Software)">
+      <button class="btn btn-primary" type="submit" id="saveBtn">បន្ថែម</button>
+      <button class="btn btn-ghost" type="button" id="resetBtn">សម្អាត</button>
+    </form>
+
+    <div id="adminList"></div>
+  </main>
+
+  <script src="../js/common.js"></script>
+  <script src="../js/admin.js"></script>
+  <script>
+    if(localStorage.getItem('isLoggedIn')!=='true'){ location.href='login.html'; }
+  </script>
+</body>
+</html>
